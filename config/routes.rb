@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'pokemons#index'
-  resources :pokemons, only: [:index]
+  resources :pokemons, only: [:index, :new, :create]
+  resources :users, only: [:index]
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

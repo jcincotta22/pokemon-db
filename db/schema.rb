@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928223056) do
+ActiveRecord::Schema.define(version: 20160929021252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "pokedexes", force: :cascade do |t|
-    t.integer "user_id",         null: false
-    t.integer "pokemon_id",      null: false
-    t.integer "cp",              null: false
-    t.integer "hp",              null: false
-    t.integer "move_id",         null: false
-    t.integer "special_move_id", null: false
-    t.index ["move_id"], name: "index_pokedexes_on_move_id", using: :btree
-    t.index ["special_move_id"], name: "index_pokedexes_on_special_move_id", using: :btree
+    t.integer "user_id",    null: false
+    t.integer "pokemon_id", null: false
+    t.index ["pokemon_id"], name: "index_pokedexes_on_pokemon_id", using: :btree
+    t.index ["user_id"], name: "index_pokedexes_on_user_id", using: :btree
   end
 
   create_table "pokemons", force: :cascade do |t|
-    t.string "name",   null: false
-    t.string "type_1", null: false
-    t.string "type_2"
+    t.string  "name",   null: false
+    t.string  "type_1", null: false
+    t.string  "type_2", null: false
+    t.integer "cp",     null: false
+    t.integer "hp",     null: false
+    t.string  "move_1", null: false
+    t.string  "move_2", null: false
   end
 
   create_table "users", force: :cascade do |t|

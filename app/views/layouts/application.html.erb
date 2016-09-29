@@ -17,6 +17,11 @@
         <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
       <% end %>
     </div>
+    <% if flash.any? %>
+      <div>
+          <%= flash[:notice] %>
+      </div>
+      <% end %>
 
     <%= yield %>
   </body>
