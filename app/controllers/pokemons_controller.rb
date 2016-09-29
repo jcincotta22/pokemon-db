@@ -10,9 +10,11 @@ class PokemonsController < ApplicationController
 
   def create
     @pokemon = Pokemon.new(pokemon_params)
+
     @user = current_user
     @pokemon_collection = Pokemon::POKEMON_COLLECTION
     if @pokemon.save
+      @pokedex = Pokedex.create(user: @user, pokemon: @pokemon)
       flash[:notice] ='Pokemon was successfully saved to your Pokedex.'
       redirect_to new_pokemon_path
     else
