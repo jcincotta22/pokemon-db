@@ -18,7 +18,7 @@ class PokemonsController < ApplicationController
     else
       @errors = @pokemon.errors.full_messages.join(', ')
       flash[:notice] = @errors
-      render action: 'new'
+      redirect_to new_pokemon_path
     end
   end
 
