@@ -1,36 +1,31 @@
-<h2>New Pokemon:</h2>
-<%= form_for @pokemon, url: {action: "create"}, html: {class: "form"} do |f| %>
+<div class="row">
 
-  <div class="row">
-    <%= f.label :name, "Name" %>
-    <%= f.select(:name, options_for_select(@pokemon_names_collection))%>
-  </div>
-  <div class="row">
-    <%= f.label :type_1, "Type 1" %>
-    <%= f.text_field :type_1 %>
-  </div>
-  <div class="row">
-    <%= f.label :type_2, "Type 2" %>
-    <%= f.text_field :type_2 %>
-  </div>
-  <div class="row">
-    <%= f.label :cp, "CP" %>
-    <%= f.number_field :cp %>
-  </div>
-  <div class="row">
-    <%= f.label :hp, "HP" %>
-    <%= f.number_field :hp %>
-  </div>
-  <div class="row">
-    <%= f.label :move_1, "Move 1" %>
-    <%= f.text_field :move_1 %>
-  </div>
-  <div class="row">
-    <%= f.label :move_2, "Move 2" %>
-    <%= f.text_field :move_2 %>
-  </div>
-  <div class="row">
-    <%= f.submit "Add Pokemon" %>
-  </div>
+  <h2>New Pokemon:</h2>
+  <%= form_for @pokemon, url: {action: "create"}, html: {class: "form"} do |f| %>
 
-<% end %>
+    <div class="medium-4 columns">
+      <%= f.label :name, "Name" %>
+      <%= f.select(:name, options_for_select(@pokemon_names_collection))%>
+    </div>
+    <div class="medium-4 columns">
+      <%= f.label :cp, "CP" %>
+      <%= f.number_field :cp %>
+    </div>
+    <div class="medium-4 columns">
+      <%= f.label :hp, "HP" %>
+      <%= f.number_field :hp %>
+    </div>
+    <div class="medium-4 columns">
+      <%= f.label :move_1, "Move 1" %>
+      <%= f.text_field :move_1 %>
+    </div>
+    <div class="medium-4 columns">
+      <%= f.label :move_2, "Move 2" %>
+      <%= f.text_field :move_2 %>
+    </div>
+    <div class "medium-4 columns end button">
+      <%= f.submit "Add Pokemon" %>
+    </div>
+
+  <% end %>
+</div>

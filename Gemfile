@@ -28,6 +28,8 @@ gem 'omniauth-facebook', '1.4.0'
 # Use Capistrano for deployment
 gem 'dotenv-rails'
 # gem 'capistrano-rails', group: :development
+gem 'foundation-rails'
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
