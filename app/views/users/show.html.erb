@@ -1,0 +1,64 @@
+<div class="all">
+  <h2><%= @user.name %></h2>
+  </div>
+  <div class="show row">
+    <div class="pokemon-show callout medium-6 columns">
+      <table class="hover">
+        <thead>
+          <tr>
+            <th colspan="3" id='header'> <%= @user.name %>'s Top Pokemon'</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @pokemons.each do |pokemon| %>
+            <tr>
+              <td>Pokemon: </td>
+              <td><%= pokemon.name %></td>
+            </tr>
+            <tr>
+              <td>CP: </td>
+              <td><%= pokemon.cp %></td>
+            </tr>
+            <tr>
+              <td>HP: </td>
+              <td><%= pokemon.hp %></td>
+            </tr>
+            <tr>
+              <td>Move 1: </td>
+              <td><%= pokemon.move_1 %></td>
+            </tr>
+            <tr>
+              <td>Move 2: </td>
+              <td><%= pokemon.move_2 %></td>
+            </tr>
+            <tr ><td class="last-row"></td><<td class="last-row"></td></tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pokemon-show callout medium-6 columns end">
+      <table class="hover">
+        <thead>
+          <tr>
+            <th colspan="3" id='header'> <%= @user.name %>'s Top 5 CP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @top_5.each do |pokemon| %>
+            <tr>
+              <td>Pokemon: </td>
+              <td><%= pokemon.name %></td>
+            </tr>
+            <tr>
+              <td>CP: </td>
+              <td><%= pokemon.cp %></td>
+            </tr>
+
+            <tr ><td class="last-row"></td><<td class="last-row"></td></tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

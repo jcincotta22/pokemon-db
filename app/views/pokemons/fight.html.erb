@@ -1,0 +1,15 @@
+
+<div class="small-4 columns fight">
+  <h2>Pokemon Battle Analyzer</h2>
+  <p>Input the pokemon you are going to fight.</p>
+  <p>This form will then select the best pokemon to use from your current collection for your upcoming battle.</p>
+
+  <%= form_for @fight, url: {action: "fighting"}, html: {class: "form"} do |f| %>
+  <div class="input-group select">
+      <%= f.select :name, options_for_select(@pokemon_names_collection), class: "input-group" %>
+  </div>
+  <div class="input-group-button">
+    <%= f.submit "Add Pokemon", class: "button" %>
+    <% end %>
+  </div>
+</div>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "The PokeBook" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -21,6 +21,11 @@
         <% else %>
           <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
         <% end %>
+        <div class='top-bar-right stacked-for-medium'>
+          <%= link_to "Home Page", pokemons_path %> /
+          <%= link_to 'Add to your Pokedex', new_pokemon_path %> /
+          <%= link_to 'Pokemon Battle', fight_path %>
+        </div>
       </div>
   </div>
     <% if flash.any? %>
@@ -32,6 +37,13 @@
     <% end %>
 
     <%= yield %>
+
+    <% if flash.alert %>
+      <div class="flash">
+        <div class="alert">
+          <%= flash[:alert] %>
+        </div>
+    <% end %>
 
   </body>
 </html>

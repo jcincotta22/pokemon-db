@@ -4,6 +4,15 @@
     The Social Media Page for PokemonGo Trainers
   </div>
 
+
+  <div class="users">
+    <h3>PokeBook Users</h3>
+    <p>Click on a user to check out their collection</p>
+    <% @users.each do |user| %>
+      <%= link_to user.name, user %>
+    <% end %>
+  </div>
+
   <div class="link">
     <p class="link">
       <%= link_to 'Add Pokemon to your Pokedex', new_pokemon_path %>

@@ -1,31 +1,43 @@
 <div class="row">
 
   <h2>New Pokemon:</h2>
-  <%= form_for @pokemon, url: {action: "create"}, html: {class: "form"} do |f| %>
+  <div class="small-4 columns">
+    <p>Select a Pokemon</p>
+    <%= form_for @pokemon, url: {action: "create"}, html: {class: "form"} do |f| %>
+    <div class="input-group select">
+        <%= f.select :name, options_for_select(@pokemon_names_collection), class: "input-group" %>
+    </div>
+      <div class="input-group">
+        <div class="input-group-label">
+          <%= f.label :cp, "CP" %>
+        </div>
+        <%= f.number_field :cp, class: "input-group-field cp" %>
+      </div>
 
-    <div class="medium-4 columns">
-      <%= f.label :name, "Name" %>
-      <%= f.select(:name, options_for_select(@pokemon_names_collection))%>
+      <div class="input-group">
+        <div class="input-group-label">
+          <%= f.label :hp, "HP" %>
+        </div>
+        <%= f.number_field :hp, class: "input-group-field hp"%>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-label">
+          <%= f.label :move_1, "Move 1" %>
+        </div>
+        <%= f.text_field :move_1, class: "input-group-field move_1" %>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-label">
+          <%= f.label :move_2, "Move 2"%>
+        </div>
+        <%= f.text_field :move_2, class: "input-group-field move_2"%>
+        <div class="input-group-button">
+          <%= f.submit "Add Pokemon", class: "button" %>
+        </div>
+      </div>
     </div>
-    <div class="medium-4 columns">
-      <%= f.label :cp, "CP" %>
-      <%= f.number_field :cp %>
-    </div>
-    <div class="medium-4 columns">
-      <%= f.label :hp, "HP" %>
-      <%= f.number_field :hp %>
-    </div>
-    <div class="medium-4 columns">
-      <%= f.label :move_1, "Move 1" %>
-      <%= f.text_field :move_1 %>
-    </div>
-    <div class="medium-4 columns">
-      <%= f.label :move_2, "Move 2" %>
-      <%= f.text_field :move_2 %>
-    </div>
-    <div class "medium-4 columns end button">
-      <%= f.submit "Add Pokemon" %>
-    </div>
+  <div>
 
   <% end %>
-</div>
