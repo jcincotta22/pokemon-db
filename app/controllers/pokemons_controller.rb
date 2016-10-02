@@ -24,13 +24,18 @@ class PokemonsController < ApplicationController
       end
 
     end
-    if @pokemon.save
-      @pokedex = Pokedex.create(user: @user, pokemon: @pokemon)
-      flash[:notice] ='Pokemon was successfully saved to your Pokedex.'
-      redirect_to new_pokemon_path
+    if @user
+      if @pokemon.save
+        @pokedex = Pokedex.create(user: @user, pokemon: @pokemon)
+        flash[:notice] ='Pokemon was successfully saved to your Pokedex.'
+        redirect_to new_pokemon_path
+      else
+        @errors = @pokemon.errors.full_messages.join(', ')
+        flash[:notice] = @errors
+        redirect_to new_pokemon_path
+      end
     else
-      @errors = @pokemon.errors.full_messages.join(', ')
-      flash[:notice] = @errors
+      flash[:notice] = "Must be signed in"
       redirect_to new_pokemon_path
     end
   end
