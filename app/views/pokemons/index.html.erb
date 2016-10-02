@@ -1,21 +1,22 @@
-<div class="index">
+<div class="title">
   <h1>The PokeBook</h1>
-  <div>
-    The Social Media Page for PokemonGo Trainers
-  </div>
+  <p>The Social Media Page for PokemonGo Trainers</p>
+</div>
 
 
-  <div class="users">
+<div class="index row">
+
+  <div class="users small-centered columns">
     <h3>PokeBook Users</h3>
     <p>Click on a user to check out their collection</p>
-    <% @users.each do |user| %>
-      <%= link_to user.name, user %>
-    <% end %>
+    <ul>
+      <% @users.each do |user| %>
+        <li><%= link_to user.name, user %></li>
+      <% end %>
+    </ul>
   </div>
 
-  <div class="link">
-    <p class="link">
+  <div class="link small-centered columns">
       <%= link_to 'Add Pokemon to your Pokedex', new_pokemon_path %>
-    </p>
   </div>
 </div>

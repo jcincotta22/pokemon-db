@@ -1,43 +1,36 @@
-<div class="row">
 
-  <h2>New Pokemon:</h2>
-  <div class="small-4 columns">
-    <p>Select a Pokemon</p>
+  <div class="form-title">
+    <h2>New Pokemon:</h2>
+  </div>
+  <div class="form">
     <%= form_for @pokemon, url: {action: "create"}, html: {class: "form"} do |f| %>
     <div class="input-group select">
+        Select a Pokemon:
         <%= f.select :name, options_for_select(@pokemon_names_collection), class: "input-group" %>
     </div>
       <div class="input-group">
-        <div class="input-group-label">
-          <%= f.label :cp, "CP" %>
-        </div>
+        CP:
         <%= f.number_field :cp, class: "input-group-field cp" %>
       </div>
 
       <div class="input-group">
-        <div class="input-group-label">
-          <%= f.label :hp, "HP" %>
-        </div>
+        HP:
         <%= f.number_field :hp, class: "input-group-field hp"%>
       </div>
 
       <div class="input-group">
-        <div class="input-group-label">
-          <%= f.label :move_1, "Move 1" %>
-        </div>
+        Move 1:
         <%= f.text_field :move_1, class: "input-group-field move_1" %>
       </div>
 
       <div class="input-group">
-        <div class="input-group-label">
-          <%= f.label :move_2, "Move 2"%>
-        </div>
+        Move 2:
         <%= f.text_field :move_2, class: "input-group-field move_2"%>
-        <div class="input-group-button">
+      </div>
+
+        <div class="input-group">
           <%= f.submit "Add Pokemon", class: "button" %>
         </div>
-      </div>
     </div>
-  <div>
 
   <% end %>
