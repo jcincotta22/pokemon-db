@@ -1,4 +1,21 @@
 
+@font-face {
+  font-family: 'pokemon';
+  src: url('/assets/Pokemon_Hollow');
+}
+
+@font-face {
+  font-family: 'pokemon_solid';
+  src: url('/assets/Pokemon_Solid');
+}
+
+h1 {
+  font-family: "pokemon_solid";
+}
+
+.main-title {
+  font-family: "pokemon";
+}
 
 body {
   background-color: #2BA0EA;
@@ -14,10 +31,6 @@ body {
 
 a {
   color: red;
-}
-
-.button {
-
 }
 
 .medium-2.columns.input-group {
@@ -86,6 +99,8 @@ tr {
 .form-title {
   text-align: center;
 }
+
+
 
 .form {
   margin-left: 20%;
