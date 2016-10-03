@@ -9,7 +9,7 @@ class PokemonsController < ApplicationController
     @pokemon_names_collection = Pokemon::POKEMON_NAMES_COLLECTION
     @pokemon_names_collection.sort!
   end
-
+ 
   def create
     @pokemon = Pokemon.new(pokemon_params)
     @user = current_user
