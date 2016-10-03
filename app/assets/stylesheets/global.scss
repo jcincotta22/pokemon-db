@@ -9,6 +9,7 @@
   src: font-url('/assets/Pokemon_Solid');
 }
 
+
 h1 {
   font-family: "pokemon_solid";
 }
@@ -19,6 +20,10 @@ h1 {
 
 body {
   background-color: #2BA0EA;
+  background-image: image-url('pokemon_go_logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 912px 555px;
 }
 
 .index {
