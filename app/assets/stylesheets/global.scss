@@ -1,12 +1,12 @@
 
 @font-face {
   font-family: 'pokemon';
-  src: url('/assets/Pokemon_Hollow');
+  src: font-url('/assets/Pokemon_Hollow');
 }
 
 @font-face {
   font-family: 'pokemon_solid';
-  src: url('/assets/Pokemon_Solid');
+  src: font-url('/assets/Pokemon_Solid');
 }
 
 h1 {
