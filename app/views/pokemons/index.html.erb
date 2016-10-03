@@ -11,7 +11,7 @@
     <p>Click on a user to check out their collection</p>
     <ul>
       <% @users.each do |user| %>
-        <li><%= link_to user.name, user %></li>
+        <li class="username"><%= link_to user.name, user %></li>
       <% end %>
     </ul>
   </div>

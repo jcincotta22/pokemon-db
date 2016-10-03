@@ -15,7 +15,7 @@ h1 {
 }
 
 .main-title {
-  font-family: "pokemon";
+  font-family: "pokemon_solid";
 }
 
 body {
@@ -35,7 +35,8 @@ body {
 }
 
 a {
-  color: red;
+  color: blue;
+
 }
 
 .medium-2.columns.input-group {
@@ -114,4 +115,18 @@ tr {
 
 .title {
 text-align: center;
+}
+
+li > a {
+  color: yellow;
+  font-weight: bold;
+}
+
+div.link > a {
+  color: yellow;
+  font-weight: bold;
+}
+
+p {
+  font-family: "pokemon_solid";
 }
